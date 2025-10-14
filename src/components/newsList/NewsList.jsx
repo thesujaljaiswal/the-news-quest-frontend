@@ -66,7 +66,10 @@ const NewsList = () => {
           title={item.title}
           author={item.author?.fullName ?? "Unknown"} // safe string
           category={item.category}
-          location={item.author?.location?.country_name ?? ""}
+          location={
+            `${item.author?.location?.city}, ${item.author?.location?.region}` ??
+            ""
+          }
           description={item.description}
         />
       ))}

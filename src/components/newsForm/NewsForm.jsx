@@ -9,17 +9,19 @@ export default function NewsForm() {
     description: "",
     category: "",
   });
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(null);
   const [success, setSuccess] = useState(null);
 
+  // Check if user is logged in on mount
   useEffect(() => {
-    const user = localStorage.getItem("user");
-
-    // If no user is found, redirect to home page
-    if (!user) {
-      alert("Please login or signup first!");
-      navigate("/", { replace: true }); // replace: true prevents back navigation
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    } else {
+      alert("Please login first!");
+      navigate("/", { replace: true });
     }
   }, [navigate]);
 
@@ -34,14 +36,6 @@ export default function NewsForm() {
     setErr(null);
     setSuccess(null);
 
-    const storedUser = localStorage.getItem("user");
-
-    // Prepare article payload
-    const payload = {
-      ...form,
-      authorId: storedUser._id || undefined,
-    };
-
     try {
       const res = await fetch(
         `${import.meta.env.VITE_API_BASE}/news/submitnews`,
@@ -50,21 +44,24 @@ export default function NewsForm() {
           headers: {
             "Content-Type": "application/json",
           },
-          credentials: "include",
-          body: JSON.stringify(payload),
+          body: JSON.stringify(form),
+          credentials: "include", // ✅ send cookies with request
         }
       );
+      console.log(res);
 
       const data = await res.json();
+
       if (!res.ok) {
-        setErr(data.error || data.message || "Error submitting article");
-        setLoading(false);
+        setErr(data.message || "Error submitting article");
         return;
       }
-      setSuccess("Article submitted!");
-      navigate("/");
-      window.location.reload();
+
+      setSuccess("Article submitted successfully!");
+      setForm({ title: "", description: "", category: "" });
+      navigate("/"); // redirect after success
     } catch (error) {
+      console.error(error);
       setErr("Network error. Please try again.");
     } finally {
       setLoading(false);
@@ -76,6 +73,7 @@ export default function NewsForm() {
       <h2 className="form-title">News Article Creation</h2>
       {err && <div className="form-error">{err}</div>}
       {success && <div className="form-success">{success}</div>}
+
       <div className="form-group">
         <label className="form-label">Title</label>
         <input
@@ -87,6 +85,7 @@ export default function NewsForm() {
           placeholder="Enter the title"
         />
       </div>
+
       <div className="form-group">
         <label className="form-label">Description</label>
         <textarea
@@ -99,6 +98,7 @@ export default function NewsForm() {
           rows={5}
         />
       </div>
+
       <div className="form-group">
         <label className="form-label">Category</label>
         <select
