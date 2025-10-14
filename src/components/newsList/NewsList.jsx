@@ -68,7 +68,7 @@ const NewsList = () => {
           category={item.category}
           location={
             `${item.author?.location?.city}, ${item.author?.location?.region}` ??
-            ""
+            "N/A"
           }
           description={item.description}
         />
