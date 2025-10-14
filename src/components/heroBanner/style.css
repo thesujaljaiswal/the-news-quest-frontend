@@ -1,0 +1,13 @@
+.HeroBannerMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.HeroBannerContent {
+}
+.HeroBannerImage {
+  img {
+    width: 600px;
+  }
+}

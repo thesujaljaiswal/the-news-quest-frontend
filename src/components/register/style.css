@@ -1,0 +1,152 @@
+.signup-form {
+  background: #fff;
+  margin: 40px auto;
+  padding: 32px 28px 24px 28px;
+  border-radius: 16px;
+  border: 1px solid black;
+  box-shadow: 8px 8px rgba(34, 34, 64, 0.12);
+  max-width: 400px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
+.form-input {
+  width: 90%;
+  padding: 10px 12px;
+  border: 1.5px solid #e3e6e8;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border-color 0.25s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  border-color: #000000;
+}
+
+.form-btn {
+  background-color: rgb(240, 240, 240);
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.form-btn:hover {
+  scale: 1.03;
+  transition: 0.2s;
+}
+
+.form-btn[disabled] {
+  background: rgb(240, 240, 240);
+  cursor: not-allowed;
+}
+
+.login-link {
+  color: #66a6ff;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  transition: color 0.18s;
+}
+
+.login-link:hover {
+  color: #004aad;
+}
+
+/* ----- Dropdown specific styles ----- */
+.dropdown-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* make dropdown look like other inputs */
+.dropdown-selected {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #e3e6e8;
+  border-radius: 8px;
+  background-color: #fafafa;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #222;
+  box-sizing: border-box;
+}
+
+/* small arrow at the right */
+.dropdown-selected .arrow {
+  font-size: 12px;
+  margin-left: 8px;
+  color: #666;
+}
+
+/* dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #e3e6e8;
+  border-radius: 10px;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 20;
+  box-shadow: 6px 6px 20px rgba(34, 34, 64, 0.08);
+  padding: 6px 6px;
+  box-sizing: border-box;
+}
+
+/* each item */
+.dropdown-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  color: #222;
+  user-select: none;
+}
+
+/* hover effect */
+.dropdown-item:hover {
+  background-color: #f1f5ff;
+}
+
+/* selected visual state */
+.dropdown-item.selected {
+  background-color: #004aad;
+  color: #fff;
+}
+
+/* hint under the dropdown */
+.form-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #666;
+}

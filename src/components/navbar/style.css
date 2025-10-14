@@ -1,0 +1,47 @@
+.MainNavHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.OptionsNavHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 400px;
+}
+
+.TitleNavHeading {
+  font-size: 22px;
+}
+
+.AuthNavHeading {
+  display: flex;
+  align-items: center;
+  button {
+    background-color: rgb(240, 240, 240);
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 120px;
+    height: 32px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    scale: 1.05;
+    transition: 0.2s;
+  }
+}
+
+.addArticleButton {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.capitalize-first-letter::first-letter {
+  text-transform: uppercase;
+}
