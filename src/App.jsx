@@ -6,6 +6,7 @@ import LandingPage from "./pages/LandingPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import AddArticle from "./pages/AddArticle.jsx";
+import ReadFullArticle from "./pages/ReadFullArticle.jsx";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -45,7 +46,7 @@ const App = () => {
       path: "/news/:id",
       element: (
         <ScrollToTop>
-          <Register />
+          <ReadFullArticle />
         </ScrollToTop>
       ),
     },

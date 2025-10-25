@@ -1,0 +1,49 @@
+.article-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  padding: 32px 28px 24px 28px;
+  border-radius: 16px;
+  border: 1px solid black;
+  box-shadow: 8px 8px rgba(34, 34, 64, 0.12);
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: start;
+  gap: 40px;
+  align-items: center;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.article-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  white-space: pre-line;
+}
+
+.loading,
+.error,
+.no-article {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 20px;
+}
+
+.error {
+  color: rgb(0, 0, 0);
+}
